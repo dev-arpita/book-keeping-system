@@ -1,6 +1,6 @@
 <?php
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $routes = [
     "/" => 'controllers/index.php', //'routes' => 'uri'
@@ -9,8 +9,18 @@ $routes = [
     "/books" => 'controllers/book.php'
 ];
 
-function routeToController($routes, $uri) {
-    if($_SERVER['REQUEST_URI'] === $uri) {
-        return $routes;
+function routeToController($uri, $routes) {
+    if (array_key_exists($uri, $routes)) {
+        require_once $routes[$uri];
+    } else{
+        failToLoadRouter();// error msg
+    }
+}
+
+function failToLoadRouter($statusCode = 404){
+    if(http_response_code($statusCode)) {
+        require_once "view/{$statuscode}.php";
+
+        die();
     }
 }
