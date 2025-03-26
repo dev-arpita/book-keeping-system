@@ -11,7 +11,7 @@ $routes = [
 
 function routeToController($uri, $routes) {
     if (array_key_exists($uri, $routes)) {
-        require_once $routes[$uri];
+        require_once "{$routes[$uri]}";
     } else{
         failToLoadRouter();// error msg
     }
@@ -24,3 +24,4 @@ function failToLoadRouter($statusCode = 404){
         die();
     }
 }
+routeToController($uri, $routes); // call the router to load the view
