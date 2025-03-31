@@ -11,6 +11,8 @@
                         <a href="/" class=" <?= (isUrlActive('/')) ? active(): 'text-gray-300'?> hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
                         <a href="/about" class="<?= (isUrlActive('/about'))? active() : 'text-gray-300'; ?>
                         hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="/books" class="<?= (isUrlActive('/books'))? active() : 'text-gray-300'; ?>
+                        hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">books</a>
                         <a href="/contact" class="
                         <?= (isUrlActive('/contact'))?  active() : 'text-gray-300'?>
                         text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
