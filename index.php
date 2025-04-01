@@ -1,24 +1,15 @@
 <?php
  require_once 'functions.php';
 //  require_once 'routes.php';
+require_once "Database.php";
 
- //connect with the database
- // PDO class
+$db = new Database();
+$books = $db->query("SELECT * FROM books where id = 2")->fetchAll(PDO::FETCH_ASSOC);
 
- //dsn- connection string that connects to the dtabase
-$dsn = 'mysql;host=localhost;port=3306;dbname=myapp;user=root;charset=utf8mb4';
-$pdo = new PDO($dsn);
-$statement = $pdo->prepare('select * from books');
-
-$statement->execute();
-
-$books = $statement->fetchAll(PDO::FETCH_ASSOC); #all books has been fetched
-
-dd($books);
+// $books = $statement->fetchAll(PDO::FETCH_ASSOC); #all books has been fetched
 
 foreach($books as $book){
     echo "<li>". $book['names']."</li>";
  }
 
-
-
+#"SELECT * FROM books"
