@@ -1,15 +1,16 @@
 <?php
  require_once 'functions.php';
 //  require_once 'routes.php';
+
+$config = require_once 'config.php';
+
 require_once "Database.php";
 
-$db = new Database();
-$books = $db->query("SELECT * FROM books where id = 2")->fetchAll(PDO::FETCH_ASSOC);
 
-// $books = $statement->fetchAll(PDO::FETCH_ASSOC); #all books has been fetched
-
+$db = new Database($config['database']);
+$books = $db->query("SELECT * FROM books")->fetchAll();
+dd($books);
 foreach($books as $book){
     echo "<li>". $book['names']."</li>";
  }
 
-#"SELECT * FROM books"
