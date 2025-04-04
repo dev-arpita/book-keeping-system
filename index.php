@@ -6,12 +6,15 @@ require_once "Database.php";
 $config = require_once 'config.php';
 
 
-// $id = $_GET['id'];
-// dd($id);
 $db = new Database($config['database']);
 
-dd($_GET);
-$books = $db->query("SELECT * FROM books")->fetch();
+$id = $_GET['id'];
+$query = " SELECT * FROM books where id = :id ";
+
+
+$books = $db->query($query, [':id' => $id ])->fetch();
+
+dd($books);
 foreach($books as $book){
     echo "<li>". $book['names']."</li>";
  }
