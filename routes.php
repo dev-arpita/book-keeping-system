@@ -5,8 +5,9 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $routes = [
     "/" => 'controllers/index.php', //'routes' => 'uri'
     "/about" => 'controllers/about.php',
-    "/contact" => 'controllers/contact.php',
-    "/books" => 'controllers/books.php'
+    "/books" => 'controllers/books.php',
+    "/book" => 'controllers/book.php',
+    "/contact" => 'controllers/contact.php'
 ];
 
 function routeToController($uri, $routes) {
@@ -19,7 +20,7 @@ function routeToController($uri, $routes) {
 
 function failToLoadRouter($statusCode = 404){
     if(http_response_code($statusCode)) {
-        require_once "view/{$statuscode}.php";
+        require_once "views/{$statuscode}.php";
 
         die();
     }
