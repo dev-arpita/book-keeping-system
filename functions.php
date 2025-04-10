@@ -12,3 +12,13 @@ function active(){
 function isUrlActive ($value) {
     return $_SERVER['REQUEST_URI'] === $value;
 }
+
+
+
+function abort($statusCode = 404){
+    if(http_response_code($statusCode)) {
+        require_once "views/{$statusCode}.php";
+
+        die();
+    }
+}
