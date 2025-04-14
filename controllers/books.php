@@ -7,7 +7,6 @@ require_once "Database.php";
 
 $db = new Database($config['database']);
 
-$books = $db->query("SELECT * FROM books where user_id = 1")->fetchAll();
-
+$books = $db->query("SELECT * FROM books where user_id = 1")->getAll();
 
 require_once "./views/booksList.view.php";

@@ -13,7 +13,11 @@ function isUrlActive ($value) {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-
+function authorized($condition) {
+    if(!$condition){
+        abort(Response::FORBIDDEN);
+    }
+}
 
 function abort($statusCode = 404){
     if(http_response_code($statusCode)) {
