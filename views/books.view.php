@@ -10,6 +10,10 @@
             </li>
         <?php endforeach; ?>
      </ul>
+
+    <button class="border-2 border-indigo-700 rounded px-4 py-2 mt-8 text-fuchsia-500 font-bold">
+        <a href="/books/create">Create</a>
+    </button>
  </div>
 </main>
 <?php require_once './views/partials/footer.php'; ?>
