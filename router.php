@@ -1,7 +1,6 @@
 <?php
 require_once 'functions.php';
 
-
 $routes = require_once "routes.php";
 
 function routeToController($uri, $routes) {

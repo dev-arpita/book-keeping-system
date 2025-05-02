@@ -6,7 +6,7 @@
      <ul >
         <?php foreach ($books as $book) : ?>
             <li class="list-disc">
-                <a href="/book?id=<?= $book['id'] ?>" class="text-amber-500 hover:underline"> <?= $book["names"] ?> </a>
+                <a href="/book?id=<?= $book['id'] ?>" class="text-amber-500 hover:underline"> <?= htmlspecialchars($book["names"]) ?></a>
             </li>
         <?php endforeach; ?>
      </ul>
