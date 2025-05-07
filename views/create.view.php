@@ -6,7 +6,8 @@
  <form method="POST" class="flex flex-col max-w-lg gap-6">
 
     <label for="names">Book Name</label>
-    <input type="text" name="names" id="names" class="px-2 py-1">
+    <input type="text" name="names" id="names" class="px-2 py-1" placeholder="Type here..."
+    value="<?= isset($_POST["names"]) ? $_POST["names"] : "" ?>">
     <?php if(isset($errors['names'])):?>
       <p class="text-red-500 text-xs">
         <?= $errors['names'];?>
@@ -14,7 +15,8 @@
     <?php endif;?>
 
     <label for="category">Book category</label>
-    <input type="text" name="category" id="category" class="px-2 py-1">
+    <input type="text" name="category" id="category" class="px-2 py-1" placeholder="Type here..."
+    value="<?= isset($_POST["category"]) ? $_POST["category"] : "" ?>">
     <?php if(isset($errors['category'])):?>
       <p class="text-red-500 text-xs">
         <?= $errors['category']?>
