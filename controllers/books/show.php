@@ -14,4 +14,4 @@ $book = $db->query('select * from books where id = :id' , ['id' => $_GET['id']])
 
     authorized($book['user_id'] == $currentUserId);
 
-require_once "./views/book.view.php";
+require_once "./views/books/show.view.php";

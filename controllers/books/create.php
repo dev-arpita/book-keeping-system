@@ -8,12 +8,13 @@ $db = new Database($config['database']);
 $errors = [];
 
 if($_SERVER["REQUEST_METHOD"] === 'POST'){
-    $validator = new Validator();
-    if (! $validator->string($_POST['names'] > 1 && $_POST['names'] > 100)) {
+   
+
+    if (! Validator::string($_POST['names'] > 1 && $_POST['names'] > 100)) {
         $errors['names'] = "The name should be less that 100 charecters";
     }
     
-    if (! $validator->string($_POST['category'] > 1 && $_POST['category'] > 50)) {
+    if (! Validator::string($_POST['category'] > 1 && $_POST['category'] > 50)) {
         $errors['category'] = "The category should be less that 50 charecters is required";
     }
     
@@ -25,4 +26,4 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
         ]);
     }
 }
-require_once "./views/create.view.php";
+require_once "./views/books/create.view.php";

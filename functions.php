@@ -26,3 +26,10 @@ function abort($statusCode = 404){
         die();
     }
 }
+
+function base_path($path){
+    return BASE_PATH . $path;
+}
+function view($path){
+    require_once base_path("/views/". $path);
+}
