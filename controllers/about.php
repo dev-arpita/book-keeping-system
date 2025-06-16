@@ -1,4 +1,4 @@
 <?php
-$heading = 'About';
-
-require_once view("about.view.php");
+view("about.view.php", [
+    'heading' => 'About Us'
+]);

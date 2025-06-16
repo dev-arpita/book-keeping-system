@@ -1,6 +1,6 @@
-<?php require_once view('partials/head.php'); ?>
-<?php require_once view('partials/nav.php'); ?>
-<?php require_once view('partials/banner.php'); ?>
+<?php view('partials/head.php'); ?>
+<?php view('partials/nav.php'); ?>
+<?php view('partials/banner.php'); ?>
 <main>
  <div class="ml-16 pt-8">
      <ul >
@@ -16,4 +16,4 @@
     </button>
  </div>
 </main>
-<?php require_once view('partials/footer.php'); ?>
+<?php view('partials/footer.php'); ?>

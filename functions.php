@@ -30,6 +30,7 @@ function abort($statusCode = 404){
 function base_path($path){
     return BASE_PATH . $path;
 }
-function view($path){
+function view($path,$attributes = []){
+    extract($attributes);
     require_once base_path("/views/". $path);
 }

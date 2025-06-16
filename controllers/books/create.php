@@ -1,7 +1,7 @@
 <?php
-$heading = 'Create New';
+
 require_once 'Validator.php';
-$config = require_once 'config.php';
+$config = require_once base_path('config.php');
 $db = new Database($config['database']);
 
 
@@ -26,4 +26,6 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
         ]);
     }
 }
-require_once "./views/books/create.view.php";
+require_once view("books/create.view.php", [
+    $heading = 'Create New',
+]);
