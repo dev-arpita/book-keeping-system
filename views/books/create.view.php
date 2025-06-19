@@ -1,6 +1,6 @@
-<?php require_once './views/partials/head.php'; ?>
-<?php require_once './views/partials/nav.php'; ?>
-<?php require_once './views/partials/banner.php'; ?>
+<?php require_once base_path('/views/partials/head.php'); ?>
+<?php require_once base_path('/views/partials/nav.php'); ?>
+<?php require_once base_path('/views/partials/banner.php'); ?>
 <main>
 <div class="ml-16 pt-8 ">
  <form method="POST" class="flex flex-col max-w-lg gap-6">
@@ -28,4 +28,4 @@
     </button>
  </form>
 </main>
-<?php require_once './views/partials/footer.php';?>
+<?php require_once base_path('/views/partials/footer.php');?>

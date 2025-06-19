@@ -1,6 +1,6 @@
-<?php require_once view('.partials/head.php'); ?>
-<?php require_once view('.partials/nav.php'); ?>
-<?php require_once view('.partials/banner.php'); ?>
+<?php require_once base_path('/views/partials/head.php'); ?>
+<?php require_once base_path('/views/partials/nav.php'); ?>
+<?php require_once base_path('/views/partials/banner.php'); ?>
 <main>
  <div class="ml-16 pt-8">
     <div class="pb-8">
@@ -11,4 +11,4 @@
     </p>
  </div>
 </main>
-<?php require_once view('.partials/footer.php'); ?>
+<?php require_once base_path('/views/partials/footer.php'); ?>

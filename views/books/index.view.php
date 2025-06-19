@@ -1,12 +1,14 @@
-<?php view('partials/head.php'); ?>
-<?php view('partials/nav.php'); ?>
-<?php view('partials/banner.php'); ?>
+<?php require_once base_path('/views/partials/head.php'); ?>
+<?php require_once base_path('/views/partials/nav.php'); ?>
+<?php require_once base_path('/views/partials/banner.php'); ?>
 <main>
  <div class="ml-16 pt-8">
      <ul >
-        <?php foreach ($books as $book) : ?>
+        <?php foreach($books as $book) : ?>
             <li class="list-disc">
-                <a href="/book?id=<?= $book['id'] ?>" class="text-sky-800 font-semibold hover:underline"><?= htmlspecialchars($book["names"]) ?></a>
+                <a href="/book?id=<?= $book['id'] ?>" class="text-sky-800 font-semibold hover:underline">
+                    <?= htmlspecialchars($book["names"]) ?>
+                </a>
             </li>
         <?php endforeach; ?>
      </ul>
@@ -16,4 +18,4 @@
     </button>
  </div>
 </main>
-<?php view('partials/footer.php'); ?>
+<?php require_once base_path('/views/partials/footer.php'); ?>
